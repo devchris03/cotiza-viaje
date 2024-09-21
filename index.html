@@ -7,56 +7,55 @@
     <title>Travel | Cotiza tu viaje aqui</title>
 </head>
 <body>
-
-    <main class="main" aria-label="Cotiza tu viaje">
+    <main role="form">
         <form action="" class="form">
-            <h2 class="title">Cotiza tu viaje aqui</h2>
-            <div class="campo">
-                <label for="destination" class="label-select">Destino:</label>
-                <select id="destination" class="select" aria-label="select destino">
-                    <option value="">Seleciona destino</option>
-                    <option value="europa">Europa</option>
-                    <option value="asia">Asia</option>
-                    <option value="america">América</option>
-                    <option value="africa">África</option>
-                </select>
-            </div> <!-- campo -->
+            <h1 class="title">Cotiza tu viaje</h1>
+            <div class="content">
+                <div class="campo">
+                    <label for="destino" class="label">Destino:</label>
+                    <select name="destino" id="destino" class="select">
+                        <option value="">--Seleccione destino--</option>
+                        <option value="europa">Europa</option>
+                        <option value="asia">Asia</option>
+                        <option value="america">América</option>
+                        <option value="africa">África</option>
+                    </select>
+                </div> <!-- campo -->
 
-            <fieldset>
-                <legend>Tipos de alojamiento:</legend>
-                <div class="campo-radio">
-                    <label for="gold" class="label">Hoteles de lujo</label>
-                    <input type="radio" name="accommodation" id="gold">
-                </div>
-                <div class="campo-radio">
-                    <label for="economic" class="label">Hoteles economicos</label>
-                    <input type="radio" name="accommodation" id="economic">
-                </div>
-                <div class="campo-radio">
-                    <label for="house" class="label">Casa alquiler</label>
-                    <input type="radio" name="accommodation" id="house">
-                </div>
-            </fieldset> <!-- campo -->
+                <div class="campo">
+                    <label for="dias" class="label">Días de viaje:</label>
+                    <input  class="input" type="number" name="dias" id="dias" min="1" max="30" value="1">
+                </div> <!-- campo -->
 
-            <div class="campo">
-                <label for="days" class="label-select">Dias de alojamiento:</label>
-                <select id="days" class="select" aria-label="select destino">
-                    <option value="">Seleciona cantidad de semana</option>
-                </select>
-            </div> <!-- campo -->
+                <div class="campo">
+                    <label for="personas" class="label">Cantidad de personas:</label>
+                    <input class="input" type="number" name="personas" id="personas" min="1" max="30" value="1">
+                </div> <!-- campo -->
 
-            <fieldset>
-                <legend>Seguro:</legend>
-                <div class="campo-radio">
-                    <label for="basic" class="label">Básico</label>
-                    <input type="radio" name="segurity" id="basic">
-                </div>
-                <div class="campo-radio">
-                    <label for="complete" class="label">Completo</label>
-                    <input type="radio" name="segurity" id="complete">
-                </div>
-            </fieldset> <!-- campo -->
-            <button type="submit" class="submit btn" id="submit">Cotizar viaje</button>
+                <div class="campo">
+                    <label for="alojamiento" class="label">Tipo de alojamiento:</label>
+                    <select class="select" name="alojamiento" id="alojamiento">
+                        <option value="">--Selecciona alojamiento--</option>
+                        <option value="lujo">Hotel de lujo</option>
+                        <option value="economico">Hotel económico</option>
+                        <option value="casa">Casa de alquiler</option>
+                    </select>
+                </div> <!-- campo -->
+                <div class="campo radioCampo">
+                    <h2 class="titleCampo">Seguro de viaje</h2>
+                    <div class="radioContent">
+                        <div class="radio">
+                            <label for="basico">Básico</label>
+                            <input type="radio" id="basico" name="seguro" value="seguro" checked>
+                        </div> <!-- radio -->
+                        <div class="radio">
+                            <label for="completo">Completo</label>
+                            <input type="radio" id="completo" name="seguro" value="seguro" checked>
+                        </div> <!-- radio -->
+                    </div>
+                </div> <!-- campo -->
+            </div> <!-- content -->
+            <button type="submit" class="button">Cotizar Viaje</button>
         </form>
     </main>
     <script src="./js/app.js"></script>
