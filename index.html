@@ -8,12 +8,12 @@
 </head>
 <body>
     <main role="form">
-        <form action="">
-            <h1 class="title">Cotiza tu viaje aquí</h1>
+        <form action="" class="form">
+            <h1 class="title">Cotiza tu viaje</h1>
             <div class="content">
                 <div class="campo">
                     <label for="destino" class="label">Destino:</label>
-                    <select name="destino" id="destino">
+                    <select name="destino" id="destino" class="select">
                         <option value="">--Seleccione destino--</option>
                         <option value="europa">Europa</option>
                         <option value="asia">Asia</option>
@@ -24,17 +24,17 @@
 
                 <div class="campo">
                     <label for="dias" class="label">Días de viaje:</label>
-                    <input type="number" name="dias" id="dias" min="1" max="30" value="1">
+                    <input  class="input" type="number" name="dias" id="dias" min="1" max="30" value="1">
                 </div> <!-- campo -->
 
                 <div class="campo">
                     <label for="personas" class="label">Cantidad de personas:</label>
-                    <input type="number" name="personas" id="personas" min="1" max="30" value="1">
+                    <input class="input" type="number" name="personas" id="personas" min="1" max="30" value="1">
                 </div> <!-- campo -->
 
                 <div class="campo">
                     <label for="alojamiento" class="label">Tipo de alojamiento:</label>
-                    <select name="alojamiento" id="alojamiento">
+                    <select class="select" name="alojamiento" id="alojamiento">
                         <option value="">--Selecciona alojamiento--</option>
                         <option value="lujo">Hotel de lujo</option>
                         <option value="economico">Hotel económico</option>
@@ -43,15 +43,16 @@
                 </div> <!-- campo -->
                 <div class="campo radioCampo">
                     <h2 class="titleCampo">Seguro de viaje</h2>
-                    <div class="radio">
-                        <label for="basico">Básico</label>
-                        <input type="radio" id="basico" name="seguro" value="seguro" checked>
-                    </div> <!-- radio -->
-
-                    <div class="radio">
-                        <label for="completo">Completo</label>
-                        <input type="radio" id="completo" name="seguro" value="seguro" checked>
-                    </div> <!-- radio -->
+                    <div class="radioContent">
+                        <div class="radio">
+                            <label for="basico">Básico</label>
+                            <input type="radio" id="basico" name="seguro" value="seguro" checked>
+                        </div> <!-- radio -->
+                        <div class="radio">
+                            <label for="completo">Completo</label>
+                            <input type="radio" id="completo" name="seguro" value="seguro" checked>
+                        </div> <!-- radio -->
+                    </div>
                 </div> <!-- campo -->
             </div> <!-- content -->
             <button type="submit" class="button">Cotizar Viaje</button>
