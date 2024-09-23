@@ -7,10 +7,10 @@
     <title>Travel | Cotiza tu viaje aqui</title>
 </head>
 <body>
-    <main role="form">
-        <form action="" class="form">
+    <main>
+        <div class="form" id="cotiza">
             <h1 class="title">Cotiza tu viaje</h1>
-            <div class="content">
+            <form class="content" id="form" role="form">
                 <div class="campo">
                     <label for="destino" class="label">Destino:</label>
                     <select name="destino" id="destino" class="select">
@@ -54,9 +54,19 @@
                         </div> <!-- radio -->
                     </div>
                 </div> <!-- campo -->
-            </div> <!-- content -->
-            <button type="submit" class="button">Cotizar Viaje</button>
-        </form>
+            </form> <!-- content -->
+            
+            <button form="form" type="submit" class="button">Cotizar Viaje</button>
+            
+            <div class="result" id="resultado"></div>
+            
+            <div class="snipperDiv" hidden>
+                <div class="spinner">
+                    <div class="dot1"></div>
+                    <div class="dot2"></div>
+                </div>
+            </div> <!-- snipper -->
+        </div>
     </main>
     <script src="./js/app.js"></script>
 </body>
