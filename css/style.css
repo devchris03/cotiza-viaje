@@ -112,6 +112,26 @@ main {
     margin-block: 2rem;
 }
 
+.resultContent {
+    margin-block: 2rem;
+    border: 1px solid var(--colorPrimary);
+    
+    .head {
+        background: var(--colorPrimary);
+        color: var(--coloWhite);
+        margin: 0;
+        padding-block: 1rem;
+        text-align: center;
+    }
+    .row {
+        padding-block: .5rem;
+    }
+
+    .title {
+        font-weight: 700;
+    }
+}
+
 .spinner {
     margin: 50px auto;
     width: 40px;

@@ -91,7 +91,45 @@ UI.prototype.message = function(type, msg) {
 }
 
 UI.prototype.showResult = function(datos, total) {
+    const {destination, dyas, user, type, hosting} = datos;
+    const result = document.querySelector('#resultado');
 
+    const resultContent = document.createElement('div');
+    resultContent.classList.add('resultContent');
+    resultContent.innerHTML = `
+        <h3 class="head">Resultados</h3>
+        <div class="body">
+            <div class="row">
+                <span class="title">Destino:</span>
+                <span class="text">${destination}</span>
+            </div>
+            <div class="row">
+                <span class="title">Dias de viaje:</span>
+                <span class="text">${dyas}</span>
+            </div>
+            <div class="row">
+                <span class="title">Personas:</span>
+                <span class="text">${user}</span>
+            </div>
+            <div class="row">
+                <span class="title">Alojamiento:</span>
+                <span class="text">${hosting}</span>
+            </div>
+            <div class="row">
+                <span class="title">Seguro:</span>
+                <span class="text">${type}</span>
+            </div>
+            <div class="row">
+                <span class="title">Total:</span>
+                <span class="text">${total}</span>
+            </div>
+        </div>
+    `;
+
+    
+    setTimeout(() => {
+        result.appendChild(resultContent);
+    },3000)
 }
 
 // ASIGNAR
@@ -101,6 +139,7 @@ const interface = new UI();
 loadEvents()
 function loadEvents() {
     const form = document.querySelector('#form');
+    const cotiza = document.querySelector('#cotiza');
 
     form.addEventListener('submit', validate);
 
@@ -118,6 +157,12 @@ function loadEvents() {
         if(destination == '' || dyas == '' || user == '' || hosting == '' || type == '') {
             interface.message('error', 'Campos incompletos. Verifique e intente de nuevo, por favor. ')
             return;
+        }
+
+        // verifica si ya existe algun resultado mostrado
+        const exist = cotiza.querySelector('#resultado .resultContent');
+        if(exist != null) {
+            exist.remove();
         }
 
         // muestra mensaje de éxito
